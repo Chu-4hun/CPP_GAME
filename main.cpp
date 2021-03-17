@@ -8,16 +8,19 @@
 #include <windows.h>
 
 using namespace std;
+
 void printVin() {
     cout << "==================" << endl;
     cout << "======Победа!=====" << endl;
     cout << "==================" << endl;
 }
+
 void printLose() {
     cout << "==================" << endl;
     cout << "~~~Поражение...~~~" << endl;
     cout << "==================" << endl;
 }
+
 class Arena {
 protected:
     int attackPower;
@@ -26,27 +29,29 @@ public:
         attackPower = a;
     }
 };
+
 class Hero : public Arena {
 public:
     void attack() {
         cout << "Атака Героя - " << attackPower << endl;
     }
 };
+
 class Enemy : public Arena {
 public:
     void attack() {
         cout << "Атака Врага - " << attackPower << endl;
     }
 };
-class BaseXaracted
-{
+
+class BaseXaracted {
 public:
     BaseXaracted(int s, int z, int l, int i, int o, int lev, int mg, int ol, int def, int mon)
-        :sila(s), zdorovie(z), lovcosti(l), intelect(i), opytnow(o), level(lev), magical(mg), opytlevel(ol), defend(def), moune(mon)
-    {
+            : sila(s), zdorovie(z), lovcosti(l), intelect(i), opytnow(o), level(lev), magical(mg), opytlevel(ol),
+              defend(def), moune(mon) {
     }
-    void printDate()
-    {
+
+    void printDate() {
         cout << " Уровень: " << level << endl;
         cout << opytnow << "/" << opytlevel << endl;
         cout << "Сила =" << sila << endl;
@@ -57,6 +62,7 @@ public:
         cout << "Защита = " << defend << endl;
         cout << moune << " Голдов" << endl;
     }
+
 private:
     int sila;
     int zdorovie;
@@ -69,23 +75,23 @@ private:
     int defend;
     int moune;
 };
-class Player
-{
+
+class Player {
 public:
     Player(string n, string c, BaseXaracted b)
-        : name(n),
-        clas(c),
-        bxd(b)
-    {
+            : name(n),
+              clas(c),
+              bxd(b) {
     }
-    void printInfo()
-    {
+
+    void printInfo() {
         cout << name << endl;
         cout << "(" << clas << ")" << endl;
         cout << "---------------------" << endl;
         bxd.printDate();
         cout << "---------------------" << endl;
     }
+
 private:
     string name;
     string clas;
@@ -98,49 +104,56 @@ public:
     myClass(string nm) {
         setName(nm);
     }
+
     void setName(string x) {
         name = x;
     }
+
     string getName() {
         return name;
     }
+
 private:
     string name;
 };
+
 int main() {
     setlocale(LC_ALL, "Russian");
     system("chcp 1251");
     Hero h;
     Enemy en;
-    Arena* e1 = &h;
-    Arena* e2 = &en;
-    int sila = 150, zdorovie = 15000, lovcosti = 200, intelect = 500, opytnow = 0, level = 1, magical = 0, opytlevel = 100, defend = 100;
-    int sila_e = 80, zdorovie_e = 18000, lovcosti_e = 250, intelect_e = 600, level_e = 1, magical_e = 0, defend_e = 150, moune = 500, zdorovie_n
-        , zdorovie_en;
+    Arena *e1 = &h;
+    Arena *e2 = &en;
+    int sila = 150, zdorovie = 1500, lovcosti = 200, intelect = 500, opytnow = 0, level = 1, magical = 0, opytlevel = 100, defend = 100;
+    int sila_e = 80, zdorovie_e = 3800, lovcosti_e = 250, intelect_e = 600, level_e = 1, magical_e = 0, defend_e = 150, moune = 500, zdorovie_n
+    , zdorovie_en;
     string x, c;
     string Enemy_1, Enemy_2, Enemy_3;
     int y, r, f, cl, hit, cikl;
     int ht1, ht2, ht3, ht4, ht5, ht6, ht7, ht8, ht9, ht10, hl, enem1, enem2, enem3;
     string hit_1, hit_2, hit_3, hit_4, hit_5, hit_6, hit_7, hit_8, hit_9, hit_10, hill;
-    cout << "Приветствую тебя! Я - гид этой игры. Постарайся сейчас ничего не трогать и не писать, я всё сейчас расскажу. Ты попал в невероятный мир - мир под названием Трип. Этот мир полон опасностей и ему нужен свой герой. Скажи, как я могу к тебе обращаться?" << endl;
+    cout
+            << "Приветствую тебя! Я - гид этой игры. Постарайся сейчас ничего не трогать и не писать, я всё сейчас расскажу."
+            << '\n'
+            << "Ты попал в невероятный мир - мир под названием Эмпэтэ. Этот мир полон монстров и ему нужен свой герой."
+            << '\n' << "Скажи, как я могу к тебе обращаться?" << endl;
     cout << "Имя твоего героя:";
     cin >> x;
     myClass ob1(x);
-    myClass ob2("Гнусный орк");
+    myClass ob2("Нежить");
     cout << "Выбери класс твоего героя:" << endl << "1)Воин" << endl << "2)Лучник" << endl << "3)Маг" << endl;
     cin >> cl;
-    if (cl == 1)
-    {
+    if (cl == 1) {
         c = "Воин";
         sila += 50;
         zdorovie += 200;
         intelect += 50;
         lovcosti += 50;
         defend += 200;
-        hit_1 = "Взаx меча";
-        hit_2 = "Раскалённый металл";
-        hit_3 = "Вылетающий клинок";
-        hit_4 = "Перекрёсток";
+        hit_1 = "Быстрая атака";
+        hit_2 = "Атака";
+        hit_3 = "Тяжелая атака";
+        hit_4 = "Супер атака";
         hit_5 = "";
         hit_6 = "";
         hit_7 = "";
@@ -148,8 +161,7 @@ int main() {
         hit_9 = "";
         hit_10 = "";
     }
-    if (cl == 2)
-    {
+    if (cl == 2) {
         c = "Лучник";
         sila += 30;
         zdorovie += 500;
@@ -167,8 +179,7 @@ int main() {
         hit_9 = "";
         hit_10 = "";
     }
-    if (cl == 3)
-    {
+    if (cl == 3) {
         c = "Маг";
         sila += 35;
         zdorovie += 300;
@@ -190,37 +201,40 @@ int main() {
     BaseXaracted bxd(sila, zdorovie, lovcosti, intelect, opytnow, level, magical, opytlevel, defend, moune);
     Player p(x, c, bxd);
     p.printInfo();
-    cout << " Теперь ты можешь действовать. Предлагаю испробовать себя. Давай посмотрим твои способности на арене." << endl;
-    cout << "Победи Гнусного оркa!" << endl;
+    cout << " Теперь ты можешь действовать. Предлагаю испробовать себя. Давай посмотрим твои способности на арене."
+         << endl;
+    cout << "Победи нежить!" << endl;
     cout << endl;
     cout << ob1.getName() << ":" << zdorovie << "HP" << endl;
     cout << ob2.getName() << ":" << zdorovie_e << "HP" << endl;
     zdorovie_n = zdorovie;
     zdorovie_en = zdorovie_e;
-    while (zdorovie_e > 0)
-    {
+    while (zdorovie_e > 0) {
         hit = 0;
         r = rand() % sila_e;
-        cout << "1." << hit_1 << endl << "2." << hit_2 << endl << "3." << hit_3 << endl;
+        cout << "1." << hit_1 << endl << "2." << hit_2 << endl << "3." << hit_3 << endl << hit_4 << endl;
         cin >> f;
-        if (f == 1)
-        {
+        if (f == 1) {
             hit = 2 * sila;
             hit -= (lovcosti_e * 0.1);
             hit += (magical * 0.1);
         };
-        if (f == 2)
-        {
+        if (f == 2) {
             hit = sila;
             hit += (intelect * 0.5);
             hit -= (lovcosti_e * 0.1);
             hit += (magical * 0.2);
         };
-        if (f == 3)
-        {
+        if (f == 3) {
             hit = sila * 2;
             hit += (intelect * 0.5);
             hit += (magical * 0.5);
+            hit -= defend_e;
+        }
+        if (f == 4) {
+            hit = sila * 4;
+            hit += (intelect * 0.6);
+            hit += (magical * 0.7);
             hit -= defend_e;
         }
         zdorovie_e -= hit;
@@ -243,51 +257,53 @@ int main() {
         moune += 50;
         printLose();
         cout << "Мне жаль, мой юный друг. Мир тебя не забудет. Ты умер как великий " << ob1.getName() << "... " << endl;
-    }
-    else {
+    } else {
         cout << ob2.getName() << ":" << zdorovie_e << "HP" << endl;
         cout << endl;
         opytnow += 30;
         moune += 100;
         printVin();
-        cout << "Мои поздравления, о Великий " << ob1.getName() << "! Ты выполнил задание. Теперь, твоя цель - избавить своё Королевство от нежети и страдания. Удачи!" << endl;
+        cout << "Мои поздравления, о Великий " << ob1.getName()
+             << "!" << '\n' << "Ты выполнил задание. Теперь, твоя цель - избавить Эмпэтэ от нежети и страданий. Удачи!"
+             << endl;
     }
     cout << endl << ob1.getName() << endl;
     cout << " Уровень: " << level << endl;
     cout << opytnow << "/" << opytlevel << endl;
-    cout << moune << " Голдов" << endl;
+    cout << moune << " Золота" << endl;
     cout << endl << endl;
     zdorovie = zdorovie_n;
-    myClass ob3("Лесной разбойник");
+    myClass ob3("Леший");
     zdorovie_e = zdorovie_en;
-    while (level <= 10)
-    {
+    while (level <= 10) {
         zdorovie_en = zdorovie_e;
         zdorovie_n = zdorovie;
         cout << ob1.getName() << ":" << zdorovie << "HP" << endl;
         cout << ob3.getName() << ":" << zdorovie_e << "HP" << endl;
-        while (zdorovie_e > 0)
-        {
+        while (zdorovie_e > 0) {
             hit = 0;
             r = rand() % sila_e;
             cout << "1." << hit_1 << endl << "2." << hit_2 << endl << "3." << hit_3 << endl;
             cin >> f;
-            if (f == 1)
-            {
+            if (f == 1) {
                 hit = 2 * sila;
                 hit -= (lovcosti_e * 0.1);
                 hit += (magical * 0.1);
             };
-            if (f == 2)
-            {
+            if (f == 2) {
                 hit = sila;
                 hit += (intelect * 0.5);
                 hit -= (lovcosti_e * 0.1);
                 hit += (magical * 0.2);
             };
-            if (f == 3)
-            {
+            if (f == 3) {
                 hit = sila * 2;
+                hit += (intelect * 0.5);
+                hit += (magical * 0.5);
+                hit -= defend_e;
+            }
+            if (f == 4) {
+                hit = sila * 3;
                 hit += (intelect * 0.5);
                 hit += (magical * 0.5);
                 hit -= defend_e;
@@ -297,8 +313,7 @@ int main() {
             e1->setAttackPower(hit);
             e2->setAttackPower(sila_e + r);
             h.attack();
-            for (int cikl = 0; cikl >= 10000; cikl++)
-            {
+            for (int cikl = 0; cikl >= 10000; cikl++) {
             }
             cout << ob3.getName() << ":" << zdorovie_e << "HP" << endl;
             en.attack();
@@ -314,8 +329,7 @@ int main() {
             opytnow += 10 * (level * 1.1);
             moune += 50 * (level * 1.1);
             printLose();
-        }
-        else {
+        } else {
             cout << ob3.getName() << ":" << zdorovie_e << "HP" << endl;
             cout << endl;
             opytnow += 30 * (level * 1.2);
@@ -324,8 +338,7 @@ int main() {
         }
         zdorovie = zdorovie_n;
         zdorovie_e = zdorovie_en;
-        if (opytnow > opytlevel)
-        {
+        if (opytnow > opytlevel) {
             opytnow = opytlevel - opytnow;
             opytnow = opytnow - opytnow - opytnow;
             cout << "Новый уровень!" << endl;
@@ -343,13 +356,11 @@ int main() {
             BaseXaracted bxd(sila, zdorovie, lovcosti, intelect, opytnow, level, magical, opytlevel, defend, moune);
             Player p(x, c, bxd);
             p.printInfo();
-        }
-        else
-        {
+        } else {
             cout << endl << ob1.getName() << endl;
             cout << " Уровень: " << level << endl;
             cout << opytnow << "/" << opytlevel << endl;
-            cout << moune << " Голдов" << endl;
+            cout << moune << " Золота" << endl;
             cout << endl << endl;
         }
     };
