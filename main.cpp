@@ -114,8 +114,8 @@ int main() {
     Enemy en;
     Arena* e1 = &h;
     Arena* e2 = &en;
-    int sila = 150, zdorovie = 1500, lovcosti = 200, intelect = 500, opytnow = 0, level = 1, magical = 0, opytlevel = 100, defend = 100;
-    int sila_e = 80, zdorovie_e = 1800, lovcosti_e = 250, intelect_e = 600, level_e = 1, magical_e = 0, defend_e = 150, moune = 500, zdorovie_n
+    int sila = 150, zdorovie = 15000, lovcosti = 200, intelect = 500, opytnow = 0, level = 1, magical = 0, opytlevel = 100, defend = 100;
+    int sila_e = 80, zdorovie_e = 18000, lovcosti_e = 250, intelect_e = 600, level_e = 1, magical_e = 0, defend_e = 150, moune = 500, zdorovie_n
         , zdorovie_en;
     string x, c;
     string Enemy_1, Enemy_2, Enemy_3;
